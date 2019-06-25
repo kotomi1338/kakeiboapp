@@ -1,0 +1,12 @@
+<%= form_with model: @cost do |form| %>
+  <%= form.label :name, "支出" %>
+  <%= form.text_field :name %>
+  <br>
+  <%= form.label :price,"値段"  %>
+  <%= form.number_field :price %>
+  <br>
+  <%= form.label :description, "説明" %>
+  <%= form.text_area :description %>
+  <br>
+  <%= form.submit "送信" %>
+<% end %>

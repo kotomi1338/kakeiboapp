@@ -4,4 +4,5 @@
 <h3>金額：<%= @cost.price %>円</h3>
 <h3>説明：<%= @cost.description %></h3>
 <hr>
+<%= link_to '編集', edit_cost_path(@cost) %>
 <%= link_to '戻る', costs_path %>
