@@ -11,7 +11,7 @@
   <tbody>
     <% @costs.each do |cost| %>
       <tr>
-        <td><%= cost.name %></td>
+        <td><%= link_to cost.name, cost %></td>
         <td><%= cost.price %>円</td>
         <td><%= cost.description %></td>
       </tr>
