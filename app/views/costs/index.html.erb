@@ -1,2 +1,20 @@
 <h1> Costs#index </h1>
 <%= link_to '新規登録', new_cost_path %>
+<table>
+  <thead>
+    <tr>
+      <th>支出</th>
+      <th>値段</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @costs.each do |cost| %>
+      <tr>
+        <td><%= cost.name %></td>
+        <td><%= cost.price %>円</td>
+        <td><%= cost.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
