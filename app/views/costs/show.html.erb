@@ -6,3 +6,4 @@
 <hr>
 <%= link_to '編集', edit_cost_path(@cost) %>
 <%= link_to '戻る', costs_path %>
+<%= link_to '削除', @cost, method: :delete, data: { confirm: "支出「#{@cost.name}」を削除します。よろしいですか?" } %>

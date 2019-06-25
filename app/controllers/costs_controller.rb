@@ -28,6 +28,9 @@ class CostsController < ApplicationController
   end
 
   def destroy
+    cost = Cost.find(params[:id])
+    cost.destroy
+    redirect_to costs_url, notice: "支出「#{cost.name}」を削除しました。"
   end
 
   private
