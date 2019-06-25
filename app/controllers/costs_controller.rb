@@ -18,6 +18,13 @@ class CostsController < ApplicationController
   end
 
   def edit
+    @cost = Cost.find(params[:id])
+  end
+
+  def update
+    cost = Cost.find(params[:id])
+    cost.update!(cost_params)
+    redirect_to costs_url, notice: "支出「#{cost.name}」を更新しました"
   end
 
   def destroy

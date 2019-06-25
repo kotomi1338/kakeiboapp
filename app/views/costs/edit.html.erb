@@ -1,1 +1,10 @@
 <h1> Costs#edit </h1>
+<%= form_with model: @cost do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :price %>
+  <%= form.number_field :price %>
+  <%= form.label :description %>
+  <%= form.text_area :description %>
+  <%= form.submit "submit" %>
+<% end %>
