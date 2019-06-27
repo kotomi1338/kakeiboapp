@@ -1,37 +1,6 @@
-<%= form_with(model: @cost, local: true) do |f| %>
+<%= bootstrap_form_with model: @cost, local: true do |f| %>
   <%= f.text_field :name %>
   <%= f.number_field :price %>
   <%= f.text_area :description %>
   <%= f.submit "送信" %>
 <% end %>
-<!-- >
-<form>
-<%= form_with model: @cost do |form| %>
-  <div class="form-group">
-    <div class="col-xs-2">
-      <%= form.label :name, "支出", class:'control-label'%>
-    </div>
-    <div class="col-xs-10">
-      <%= form.text_field :name, class:'form-control'%>
-    </div>
-  <div>
-  <div class="form-group">
-    <div class="col-xs-2">
-      <%= form.label :price,"値段", class:'control-label'%>
-    </div>
-    <div class="col-xs-10">
-    <%= form.number_field :price, class:'form-control'%>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-xs-2">
-      <%= form.label :description, "説明", class:'control-label'%>
-    </div>
-    <div class="col-xs-2">
-      <%= form.text_area :description, class:'form-control'%>
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">送信</button>
-<% end %>
-</form>
-<!-->
