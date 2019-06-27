@@ -1,11 +1,13 @@
-<h1> Costs#index </h1>
-<%= link_to '新規登録', new_cost_path %>
-<table>
+<br><br>
+<h1>支出一覧</h1>
+<hr>
+<a class="btn btn-primary btn-lg btn-block" href="/costs/new" role="button">新規登録</a>
+<br>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>支出</th>
       <th>値段</th>
-      <th>説明</th>
     </tr>
   </thead>
   <tbody>
@@ -13,7 +15,6 @@
       <tr>
         <td><%= link_to cost.name, cost %></td>
         <td><%= cost.price %>円</td>
-        <td><%= cost.description %></td>
       </tr>
     <% end %>
   </tbody>
