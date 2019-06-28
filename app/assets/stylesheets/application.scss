@@ -14,3 +14,11 @@
  *= require_self
  */
 @import "bootstrap";
+h1 a {
+  color: black;
+}
+
+h1 a:hover {
+  color: black;
+  text-decoration: none;
+}
