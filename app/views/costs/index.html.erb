@@ -18,4 +18,10 @@
       </tr>
     <% end %>
   </tbody>
+  <tfoot>
+    <tr>
+      <th>合計金額</th>
+      <th><%= @costs.sum(:price) %>円</th>
+    </tr>
+  </tfoot>
 </table>
