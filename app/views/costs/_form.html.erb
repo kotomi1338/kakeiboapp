@@ -1,4 +1,4 @@
-<%= bootstrap_form_with model: @cost, local: true do |f| %>
+<%= bootstrap_form_with model: @cost, inline_errors: false, local: true do |f| %>
   <% if cost.errors.any? %>
   <div class="alert alert-danger">
     <ul>
