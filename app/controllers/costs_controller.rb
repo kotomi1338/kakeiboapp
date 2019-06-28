@@ -8,9 +8,12 @@ class CostsController < ApplicationController
   end
 
   def create
-    cost = Cost.new(cost_params)
-    cost.save!
-    redirect_to costs_url, notice: "支出「#{cost.name}」を登録しました"
+    @cost = Cost.new(cost_params)
+    if @cost.save
+      redirect_to costs_url, notice: "支出「#{@cost.name}」を登録しました"
+    else
+      render :new
+    end
   end
 
   def show
