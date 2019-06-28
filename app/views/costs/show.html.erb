@@ -1,4 +1,5 @@
 <h2><%= @cost.name %></h2>
+<%= @cost.date.strftime('%Y年%m月%d日') %>
 <hr>
 <h3>金額：<%= @cost.price %>円</h3>
 <h3>説明：<%= @cost.description %></h3>
