@@ -39,6 +39,6 @@ class CostsController < ApplicationController
   private
 
     def cost_params
-      params.require(:cost).permit(:name, :price, :description)
+      params.require(:cost).permit(:name, :price, :description, :date)
     end
 end

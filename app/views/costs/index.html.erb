@@ -6,13 +6,15 @@
 <table class="table table-bordered">
   <thead>
     <tr>
+      <th>日付</th>
       <th>支出</th>
       <th>値段</th>
     </tr>
   </thead>
   <tbody>
-    <% @costs.each do |cost| %>
+    <% @costs.order(:date).each do |cost| %>
       <tr>
+        <td><%= cost.date.strftime('%Y年%m月%d日') %></td>
         <td><%= link_to cost.name, cost %></td>
         <td><%= cost.price %>円</td>
       </tr>
@@ -21,6 +23,7 @@
   <tfoot>
     <tr>
       <th>合計金額</th>
+      <th></th>
       <th><%= @costs.sum(:price) %>円</th>
     </tr>
   </tfoot>
