@@ -1,0 +1,16 @@
+<%= bootstrap_form_with model: @income, inline_errors: false, local: true do |f| %>
+  <% if income.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+    <% income.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+  <%= f.text_field :name %>
+  <%= f.number_field :price %>
+  <%= f.text_area :description %>
+  <%= f.date_field :date %>
+  <%= f.submit "送信" %>
+<% end %>
