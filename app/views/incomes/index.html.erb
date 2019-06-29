@@ -1,0 +1,38 @@
+<br>
+<h1>収入一覧</h1>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+    <a class="nav-link active" href="/costs">支出一覧</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="/incomes">収入一覧</a>
+  </li>
+</ul>
+<br>
+<a class="btn btn-primary btn-lg btn-block" href="/incomes/new" role="button">新規登録</a>
+<br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>日付</th>
+      <th>支出</th>
+      <th>値段</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @incomes.order(:date).each do |income| %>
+      <tr>
+        <td><%= income.date.strftime('%Y年%m月%d日') %></td>
+        <td><%= link_to income.name, income %></td>
+        <td><%= income.price %>円</td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>合計金額</th>
+      <th></th>
+      <th><%= @incomes.sum(:price) %>円</th>
+    </tr>
+  </tfoot>
+</table>

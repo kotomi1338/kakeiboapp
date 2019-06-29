@@ -1,0 +1,12 @@
+<h2><%= @income.name %></h2>
+<%= @income.date.strftime('%Y年%m月%d日') %>
+<hr>
+<h3>金額：<%= @income.price %>円</h3>
+<h3>説明：<%= @income.description %></h3>
+<hr>
+<%= link_to "戻る", incomes_path, { :class => "btn btn-secondary" }%>
+<%= link_to "編集", edit_income_path, { :class => "btn btn-primary" }%>
+<%= link_to "削除", income_path(@income.id), method: :delete,
+  data:{ confirm: "収入「#{@income.name}」を削除します。よろしいですか?" },
+  class: "btn btn-danger"
+%>
