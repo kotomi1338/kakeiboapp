@@ -30,9 +30,14 @@
   </tbody>
   <tfoot>
     <tr>
-      <th>合計金額</th>
-      <th></th>
+      <th colspan="2">合計金額</th>
       <th><%= @costs.sum(:price) %>円</th>
     </tr>
   </tfoot>
 </table>
+<hr>
+<h4>収入 - 支出 = 合計 :</h4>
+<h2><%= @incomes.sum(:price) %>円 - <%= @costs.sum(:price) %>円 =
+  <%= @incomes.sum(:price) - @costs.sum(:price) %>円
+</h2>
+<hr>

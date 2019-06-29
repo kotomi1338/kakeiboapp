@@ -1,6 +1,7 @@
 class CostsController < ApplicationController
   def index
     @costs = Cost.all
+    @incomes = Income.all
   end
 
   def new
