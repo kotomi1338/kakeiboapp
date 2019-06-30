@@ -1,7 +1,33 @@
 class CostsController < ApplicationController
+  require 'csv'
+
   def index
     @costs = Cost.all
     @incomes = Income.all
+    respond_to do |format|
+      format.html
+      format.csv do
+        costs_to_csv
+      end
+    end
+  end
+
+  def costs_to_csv
+    bom = "\uFEFF"
+    csv_date = CSV.generate(bom) do |csv|
+      csv_column_names = ["日付","支出内容","価格","説明"]
+      csv << csv_column_names
+      @costs.each do |cost|
+        csv_column_values = [
+          cost.date,
+          cost.name,
+          cost.price,
+          cost.description,
+        ]
+        csv << csv_column_values
+      end
+    end
+    send_data(csv_date, filename: "支出一覧.csv")
   end
 
   def new
