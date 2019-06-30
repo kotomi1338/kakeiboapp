@@ -1,7 +1,7 @@
 <br>
 <h1>支出一覧</h1>
 <ul class="nav nav-tabs">
-    <li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link active" href="/costs">支出一覧</a>
   </li>
   <li class="nav-item">
@@ -35,6 +35,9 @@
     </tr>
   </tfoot>
 </table>
+<button type="button" class="btn btn-light">
+  <%= link_to 'csvダウンロード', '/costs.csv', {format: :csv} %>
+</button>
 <hr>
 <h4>収入 - 支出 = 合計 :</h4>
 <h2><%= @incomes.sum(:price) %>円 - <%= @costs.sum(:price) %>円 =
