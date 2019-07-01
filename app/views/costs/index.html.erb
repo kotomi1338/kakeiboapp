@@ -22,7 +22,7 @@
   <tbody>
     <% @costs.order(:date).each do |cost| %>
       <tr>
-        <td><%= cost.date.strftime('%Y年%m月%d日') %></td>
+        <td><%= link_to cost.date.strftime('%Y年%m月%d日'), costs_daily_path %></td>
         <td><%= link_to cost.name, cost %></td>
         <td><%= cost.price %>円</td>
       </tr>
