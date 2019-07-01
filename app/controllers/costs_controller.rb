@@ -47,6 +47,10 @@ class CostsController < ApplicationController
     @cost = Cost.find(params[:id])
   end
 
+  def daily
+    @daily = Cost.find(params[:date]).select("date(date) as costs_date, name as costs_name, price as costs_price").group("date(date)")
+  end
+
   def edit
     @cost = Cost.find(params[:id])
   end

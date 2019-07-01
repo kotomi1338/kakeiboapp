@@ -1,0 +1,30 @@
+<br>
+<h1>
+  <%= cost.date.strftime('%Y年%m月%d日') %>
+</h1>
+<hr>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>支出</th>
+      <th>値段</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @daily.each do |cost| %>
+      <tr>
+        <td><%= link_to cost.name, cost %></td>
+        <td><%= cost.price %>円</td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="2">合計金額</th>
+      <th><%= @daily.sum(:price) %>円</th>
+    </tr>
+  </tfoot>
+</table>
+
+<hr>
+<%= link_to "戻る", root_path, { :class => "btn btn-secondary" }%>

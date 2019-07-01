@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'costs#index'
   resources :costs
   resources :incomes
+  get '/costs/daily', to: 'costs#daily', param: :date
 end
